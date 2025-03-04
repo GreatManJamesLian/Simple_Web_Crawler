@@ -1,0 +1,16 @@
+services:
+  crawler:
+    build: .
+    container_name: python_crawler
+    restart: no
+    volumes:
+      - ./logs:/app/logs  # 儲存 Log
+    environment:
+      - PYTHONUNBUFFERED=1
+      - TZ=Asia/Taipei  # 設定容器內的時區
+    networks:
+      - crawler_network
+
+networks:
+  crawler_network:
+    driver: bridge
