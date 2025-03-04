@@ -4,7 +4,7 @@ import time
 from datetime import datetime
 
 # === 需填寫的選項 ===
-URL_LIST = ["https://luz.tcd.gov.tw/web/default.aspx"]  # 測試網址清單
+URL_LIST = ["https://example.com"]  # 測試網址清單
 FREQUENCY = 5  # 請求頻率 (秒)
 
 # 特殊 Header (如需要請填寫)
@@ -37,7 +37,7 @@ def main():
     start_time = time.time()
     log_data = []
 
-    while time.time() - start_time < 1 * 60:  # 20 分鐘執行時間
+    while time.time() - start_time < 20 * 60:  # 20 分鐘執行時間
         for url in URL_LIST:
             result = fetch_status(url)
             log_data.append(result)
